@@ -1,0 +1,29 @@
+<!-- INTERN AKSHAY PIRANAV B
+@akshaypiranavb@gmail.com -->
+{% extends "header.htm" %}
+
+{% block content %}
+
+
+
+<div class="container col-sm-6 col-md-6 col-xs-6 col-lg-6 border border-primary rounded" style="margin-top: 200px;">
+    <h1 class="display-4 text-center ">JSON VALIDATOR</h1>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{message.tags}}  coll" role="alert">
+            {{ message }}
+    
+        </div>
+    {% endfor %}
+    {% endif %}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group"> 
+            <label for="json" class=" my-2 ms-1 ">JSON FILE</label>
+            <input type="file" name="jsonFile" accept=".json" id="json" class="form form-control my-2">
+            <input type="submit" value="VALIDATE" class="btn btn-primary w-100 my-2">
+        </div>
+    </form>
+</div>
+
+{% endblock %}
